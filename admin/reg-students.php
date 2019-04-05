@@ -83,18 +83,18 @@ header('location:reg-students.php');
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>No KTA</th>
-                                            <th>Nama</th>
-                                            <th>Pangkat / Golongan</th>
-                                            <th>NRP / NIP</th>
-                                            <th>Jabatan</th>
-                                            <th>Satuan</th>
-                                            <th>Email </th>
-                                            <th>No Telp</th>
-                                            <th>Tanggal Registrasi</th>
-                                            <th>Status</th>
-                                            <th>Aksi</th>
+                                            <th style="text-align: center;">No</th>
+                                            <th style="text-align: center;">No KTA</th>
+                                            <th style="text-align: center;">Nama</th>
+                                            <th style="text-align: center;">Pangkat / Golongan</th>
+                                            <th style="text-align: center;">NRP / NIP</th>
+                                            <th style="text-align: center;">Jabatan</th>
+                                            <th style="text-align: center;">Satuan</th>
+                                            <th style="text-align: center;">Email </th>
+                                            <th style="text-align: center;">No Telp</th>
+                                            <th style="text-align: center;">Tanggal Registrasi</th>
+                                            <th style="text-align: center;">Status</th>
+                                            <th style="text-align: center;">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -120,11 +120,11 @@ foreach($results as $result)
                                              <td class="center"><?php echo htmlentities($result->RegDate);?></td>
                                             <td class="center"><?php if($result->Status==1)
                                             {
-                                                echo htmlentities("Active");
+                                                echo htmlentities("Aktif");
                                             } else {
 
 
-                                            echo htmlentities("Blocked");
+                                            echo htmlentities("Blokir");
 }
                                             ?></td>
                                             <td class="center">

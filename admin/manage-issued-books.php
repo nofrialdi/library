@@ -92,14 +92,14 @@ else{
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Nama</th>
-                                            <th>Judul</th>
-                                            <th>ISBN </th>
-                                            <th>Tanggal Peminjaman</th>
-                                            <th>Tanggal Batas Pengembalian</th>
-                                            <th>Tanggal / Status Pengembalian</th>
-                                            <th>Action</th>
+                                            <th style="text-align: center;">No</th>
+                                            <th style="text-align: center;">Nama</th>
+                                            <th style="text-align: center;">Judul</th>
+                                            <th style="text-align: center;">Kode Rak/Buku </th>
+                                            <th style="text-align: center;">Tanggal Peminjaman</th>
+                                            <th style="text-align: center;">Tanggal Batas Pengembalian</th>
+                                            <th style="text-align: center;">Tanggal / Status Pengembalian</th>
+                                            <th style="text-align: center;">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -121,6 +121,7 @@ foreach($results as $result)
                                             <td class="center"><?php echo htmlentities($result->Batas);?></td>
                                             <td class="center"><?php if($result->ReturnDate=="")
                                             {
+                                                 echo "<span style='color:red'>";
                                                 echo htmlentities("Belum Dikembalikan");
                                             } else {
 

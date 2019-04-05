@@ -120,7 +120,7 @@ error:function (){}
                             </div>
 
                             <div class="form-group">
-                                <label>Nomor ISBN<span style="color:red;">*</span></label>
+                                <label>Kode Rak/Buku<span style="color:red;">*</span></label>
                                 <input class="form-control" type="text" name="booikid" id="bookid" onBlur="getbook()"  required="required" />
                             </div>
 

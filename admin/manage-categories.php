@@ -111,12 +111,12 @@ header('location:manage-categories.php');
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Kategori</th>
-                                            <th>Status</th>
-                                            <th>Dibuat Tanggal</th>
-                                            <th>Diperbarui Tanggal</th>
-                                            <th>Aksi</th>
+                                            <th style="text-align: center;">No</th>
+                                            <th style="text-align: center;">Kategori</th>
+                                            <th style="text-align: center;">Status</th>
+                                            <th style="text-align: center;">Dibuat Tanggal</th>
+                                            <th style="text-align: center;">Diperbarui Tanggal</th>
+                                            <th style="text-align: center;">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>

@@ -132,7 +132,7 @@ foreach($results as $result)
 </div>
 
 <div class="form-group">
-<label>Kode Rak<span style="color:red;">*</span></label>
+<label>Kode Rak/Buku<span style="color:red;">*</span></label>
 <input class="form-control" type="text" name="isbn"  required="required" autocomplete="off"  />
 </div>
 
@@ -142,7 +142,7 @@ foreach($results as $result)
 </div>
 
  <div class="form-group">
- <label>Harga<span style="color:red;">*</span></label>
+ <label>Harga Buku (Rp)<span style="color:red;">*</span></label>
  <input class="form-control" type="text" name="price" autocomplete="off"   required="required" />
  </div>
 <button type="submit" name="add" class="btn btn-info">Tambah </button>

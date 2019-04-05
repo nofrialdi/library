@@ -111,12 +111,12 @@ header('location:manage-authors.php');
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Nama Pengarang</th>
+                                            <th style="text-align: center;">No</th>
+                                            <th style="text-align: center;">Nama Pengarang</th>
                                          
-                                            <th>Dibuat</th>
-                                            <th>Diupdate</th>
-                                            <th>Aksi</th>
+                                            <th style="text-align: center;">Dibuat</th>
+                                            <th style="text-align: center;">Diupdate</th>
+                                            <th style="text-align: center;">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>

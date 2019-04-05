@@ -108,17 +108,17 @@ header('location:manage-books.php');
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <table style="width:100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Judul Buku</th>
-                                            <th>Kategori</th>
-                                            <th>Pengarang</th>
-                                            <th>Kode Rak</th>
-                                            <th>Gambar Buku</th>
-                                            <th>Harga</th>
-                                            <th>Aksi</th>
+                                            <th style="text-align: center;">No</th>
+                                            <th style="text-align: center;">Judul Buku</th>
+                                            <th style="text-align: center;">Kategori</th>
+                                            <th style="text-align: center;">Pengarang</th>
+                                            <th style="text-align: center;">Kode Rak/Buku</th>
+                                            <th style="text-align: center;">Gambar Buku</th>
+                                            <th style="text-align: center;">Harga Buku (Rp)</th>
+                                            <th style="text-align: center;">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>

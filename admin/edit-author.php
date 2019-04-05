@@ -82,7 +82,7 @@ foreach($results as $result)
 <?php }} ?>
 </div>
 
-<button type="submit" name="update" class="btn btn-info">Prbarui </button>
+<button type="submit" name="update" class="btn btn-info">Perbarui </button>
 
                                     </form>
                             </div>

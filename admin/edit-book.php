@@ -149,9 +149,8 @@ continue;
 </div>
 
 <div class="form-group">
-<label>Kode Rak<span style="color:red;">*</span></label>
+<label>Kode Rak/Buku<span style="color:red;">*</span></label>
 <input class="form-control" type="text" name="isbn" value="<?php echo htmlentities($result->ISBNNumber);?>"  required="required" />
-<p class="help-block">An ISBN is an International Standard Book Number.ISBN Must be unique</p>
 </div>
 
 <div class="form-group">
@@ -161,11 +160,11 @@ continue;
 </div>
 
  <div class="form-group">
- <label>Price in USD<span style="color:red;">*</span></label>
+ <label>Harga Buku (Rp)<span style="color:red;">*</span></label>
  <input class="form-control" type="text" name="price" value="<?php echo htmlentities($result->BookPrice);?>"   required="required" />
  </div>
  <?php }} ?>
-<button type="submit" name="update" class="btn btn-info">Update </button>
+<button type="submit" name="update" class="btn btn-info">Perbarui </button>
 
                                     </form>
                             </div>
