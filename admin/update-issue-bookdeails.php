@@ -162,7 +162,7 @@ foreach($results as $result)
 </div>
 
 <div class="form-group">
-<label>Denda (Rp) :</label>
+<label>Denda Kehilangan/Kerusakan (Rp) :</label>
 <?php 
 if($result->fine=="")
 {?>

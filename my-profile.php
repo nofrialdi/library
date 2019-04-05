@@ -11,16 +11,24 @@ if(isset($_POST['update']))
 {    
 $sid=$_SESSION['stdid'];  
 $fname=$_POST['fullanme'];
+$pangkat=$_POST['pangkat'];
+$nrp=$_POST['nrp'];
+$jabatan=$_POST['jabatan'];
+$satuan=$_POST['satuan'];
 $mobileno=$_POST['mobileno'];
 
-$sql="update tblstudents set FullName=:fname,MobileNumber=:mobileno where StudentId=:sid";
+$sql="update tblstudents set FullName=:fname,MobileNumber=:mobileno,Pangkat=:pangkat,Nrp=:nrp,Jabatan=:jabatan,Satuan=:satuan where StudentId=:sid";
 $query = $dbh->prepare($sql);
 $query->bindParam(':sid',$sid,PDO::PARAM_STR);
 $query->bindParam(':fname',$fname,PDO::PARAM_STR);
 $query->bindParam(':mobileno',$mobileno,PDO::PARAM_STR);
+$query->bindParam(':pangkat',$mobileno,PDO::PARAM_STR);
+$query->bindParam(':nrp',$mobileno,PDO::PARAM_STR);
+$query->bindParam(':jabatan',$mobileno,PDO::PARAM_STR);
+$query->bindParam(':satuan',$mobileno,PDO::PARAM_STR);
 $query->execute();
 
-echo '<script>alert("Your profile has been updated")</script>';
+echo '<script>alert("Profil Berhasil diperbarui")</script>';
 }
 
 ?>
@@ -54,7 +62,7 @@ echo '<script>alert("Your profile has been updated")</script>';
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Profile Saya</h4>
+                <h4 class="header-line">Profil Saya</h4>
                 
                             </div>
 
@@ -64,13 +72,13 @@ echo '<script>alert("Your profile has been updated")</script>';
 <div class="col-md-9 col-md-offset-1">
                <div class="panel panel-danger">
                         <div class="panel-heading">
-                           Profile Saya
+                           Profil Saya
                         </div>
                         <div class="panel-body">
                             <form name="signup" method="post">
 <?php 
 $sid=$_SESSION['stdid'];
-$sql="SELECT StudentId,FullName,EmailId,MobileNumber,RegDate,UpdationDate,Status from  tblstudents  where StudentId=:sid ";
+$sql="SELECT StudentId,FullName,EmailId,MobileNumber,RegDate,UpdationDate,Status,Pangkat,Nrp,Jabatan,Satuan from  tblstudents  where StudentId=:sid ";
 $query = $dbh -> prepare($sql);
 $query-> bindParam(':sid', $sid, PDO::PARAM_STR);
 $query->execute();
@@ -99,11 +107,11 @@ foreach($results as $result)
 
 
 <div class="form-group">
-<label>Profile Status : </label>
+<label>Status Profil: </label>
 <?php if($result->Status==1){?>
-<span style="color: green">Active</span>
+<span style="color: green">Aktif</span>
 <?php } else { ?>
-<span style="color: red">Blocked</span>
+<span style="color: red">Blokir</span>
 <?php }?>
 </div>
 
@@ -112,6 +120,28 @@ foreach($results as $result)
 <label>Nama</label>
 <input class="form-control" type="text" name="fullanme" value="<?php echo htmlentities($result->FullName);?>" autocomplete="off" required />
 </div>
+
+<div class="form-group">
+<label>Pangkat / Golongan</label>
+<input class="form-control" type="text" name="pangkat" value="<?php echo htmlentities($result->Pangkat);?>" autocomplete="off" required />
+</div>
+
+<div class="form-group">
+<label>NRP / NIP</label>
+<input class="form-control" type="text" name="nrp" value="<?php echo htmlentities($result->Nrp);?>" autocomplete="off" required />
+</div>
+
+<div class="form-group">
+<label>Jabatan</label>
+<input class="form-control" type="text" name="jabatan" value="<?php echo htmlentities($result->Jabatan);?>" autocomplete="off" required />
+</div>
+
+<div class="form-group">
+<label>Satuan</label>
+<input class="form-control" type="text" name="satuan" value="<?php echo htmlentities($result->Satuan);?>" autocomplete="off" required />
+</div>
+
+
 
 
 <div class="form-group">
@@ -125,7 +155,7 @@ foreach($results as $result)
 </div>
 <?php }} ?>
                               
-<button type="submit" name="update" class="btn btn-primary" id="submit">Update Now </button>
+<button type="submit" name="update" class="btn btn-primary" id="submit">Perbarui </button>
 
                                     </form>
                             </div>

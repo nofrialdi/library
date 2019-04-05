@@ -49,7 +49,7 @@ header('location:manage-books.php');
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Manage Issued Books</h4>
+                <h4 class="header-line">Daftar Peminjaman Buku</h4>
     </div>
     
 
@@ -58,19 +58,19 @@ header('location:manage-books.php');
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                          Issued Books 
+                          Peminjaman Buku
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Book Name</th>
-                                            <th>ISBN </th>
-                                            <th>Issued Date</th>
-                                            <th>Return Date</th>
-                                            <th>Fine in(USD)</th>
+                                            <th>No</th>
+                                            <th>Judul Buku</th>
+                                            <th>Kode Rak/Buku </th>
+                                            <th>Tanggal Peminjaman</th>
+                                            <th>Tanggal Pengembalian</th>
+                                            <th>Denda Kehilangan/Kerusakan (Rp)</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -94,7 +94,7 @@ foreach($results as $result)
                                             <td class="center"><?php if($result->ReturnDate=="")
                                             {?>
                                             <span style="color:red">
-                                             <?php   echo htmlentities("Not Return Yet"); ?>
+                                             <?php   echo htmlentities("Buku Belum Dikembalikan"); ?>
                                                 </span>
                                             <?php } else {
                                             echo htmlentities($result->ReturnDate);
