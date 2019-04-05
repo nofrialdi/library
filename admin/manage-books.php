@@ -49,7 +49,7 @@ header('location:manage-books.php');
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Manage Books</h4>
+                <h4 class="header-line">Kelola Data Buku</h4>
     </div>
      <div class="row">
     <?php if($_SESSION['error']!="")
@@ -104,20 +104,20 @@ header('location:manage-books.php');
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                           Books Listing
+                           List Buku
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Book Name</th>
-                                            <th>Category</th>
-                                            <th>Author</th>
+                                            <th>No</th>
+                                            <th>Judul Buku</th>
+                                            <th>Kategori</th>
+                                            <th>Pengarang</th>
                                             <th>ISBN</th>
-                                            <th>Price</th>
-                                            <th>Action</th>
+                                            <th>Harga</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -140,7 +140,7 @@ foreach($results as $result)
                                             <td class="center">
 
                                             <a href="edit-book.php?bookid=<?php echo htmlentities($result->bookid);?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button> 
-                                          <a href="manage-books.php?del=<?php echo htmlentities($result->bookid);?>" onclick="return confirm('Are you sure you want to delete?');"" >  <button class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</button>
+                                          <a href="manage-books.php?del=<?php echo htmlentities($result->bookid);?>" onclick="return confirm('Are you sure you want to delete?');"" >  <button class="btn btn-danger"><i class="fa fa-pencil"></i> Hapus</button>
                                             </td>
                                         </tr>
  <?php $cnt=$cnt+1;}} ?>                                      

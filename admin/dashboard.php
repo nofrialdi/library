@@ -57,7 +57,7 @@ $listdbooks=$query->rowCount();
 
 
                             <h3><?php echo htmlentities($listdbooks);?></h3>
-                      Data Buku
+                      Jumlah Buku
                         </div>
                     </div>
 
@@ -74,7 +74,7 @@ $issuedbooks=$query1->rowCount();
 ?>
 
                             <h3><?php echo htmlentities($issuedbooks);?> </h3>
-                           Times Book Issued
+                           Buku Dipinjam
                         </div>
                     </div>
              
@@ -92,7 +92,7 @@ $returnedbooks=$query2->rowCount();
 ?>
 
                             <h3><?php echo htmlentities($returnedbooks);?></h3>
-                          Times  Books Returned
+                          Buku Dikembalikan
                         </div>
                     </div>
                <div class="col-md-3 col-sm-3 col-xs-6">
@@ -100,13 +100,13 @@ $returnedbooks=$query2->rowCount();
                             <i class="fa fa-users fa-5x"></i>
                             <?php 
 $sql3 ="SELECT id from tblstudents ";
-$query3 = $dbh -> prepare($sql1);
+$query3 = $dbh -> prepare($sql3);
 $query3->execute();
 $results3=$query3->fetchAll(PDO::FETCH_OBJ);
 $regstds=$query3->rowCount();
 ?>
                             <h3><?php echo htmlentities($regstds);?></h3>
-                           Registered Users
+                           User Terdaftar
                         </div>
                     </div>
 
@@ -129,7 +129,7 @@ $listdathrs=$query4->rowCount();
 
 
                             <h3><?php echo htmlentities($listdathrs);?></h3>
-                      Authors Listed
+                      Jumlah Pengarang
                         </div>
                     </div>
 
@@ -139,14 +139,14 @@ $listdathrs=$query4->rowCount();
                             <i class="fa fa-file-archive-o fa-5x"></i>
 <?php 
 $sql5 ="SELECT id from tblcategory ";
-$query5 = $dbh -> prepare($sql1);
+$query5 = $dbh -> prepare($sql5);
 $query5->execute();
 $results5=$query5->fetchAll(PDO::FETCH_OBJ);
 $listdcats=$query5->rowCount();
 ?>
 
                             <h3><?php echo htmlentities($listdcats);?> </h3>
-                           Listed Categories
+                           Jumlah Kategori Buku
                         </div>
                     </div>
              

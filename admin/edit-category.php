@@ -79,7 +79,7 @@ foreach($results as $result)
 {               
   ?> 
 <div class="form-group">
-<label>Category Name</label>
+<label>Kategori</label>
 <input class="form-control" type="text" name="category" value="<?php echo htmlentities($result->CategoryName);?>" required />
 </div>
 <div class="form-group">
@@ -87,18 +87,18 @@ foreach($results as $result)
 <?php if($result->Status==1) {?>
  <div class="radio">
 <label>
-<input type="radio" name="status" id="status" value="1" checked="checked">Active
+<input type="radio" name="status" id="status" value="1" checked="checked">Aktif
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="status" id="status" value="0">Inactive
+<input type="radio" name="status" id="status" value="0">Tidak Aktif
 </label>
 </div>
 <?php } else { ?>
 <div class="radio">
 <label>
-<input type="radio" name="status" id="status" value="0" checked="checked">Inactive
+<input type="radio" name="status" id="status" value="0" checked="checked">Tidak Aktif
 </label>
 </div>
  <div class="radio">
@@ -109,7 +109,7 @@ foreach($results as $result)
 <?php } ?>
 </div>
 <?php }} ?>
-<button type="submit" name="update" class="btn btn-info">Update </button>
+<button type="submit" name="update" class="btn btn-info">Perbarui </button>
 
                                     </form>
                             </div>

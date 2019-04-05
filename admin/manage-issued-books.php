@@ -39,7 +39,7 @@ else{
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Manage Issued Books</h4>
+                <h4 class="header-line">Kelola Peminjaman Buku</h4>
     </div>
      <div class="row">
     <?php if($_SESSION['error']!="")
@@ -85,19 +85,19 @@ else{
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                          Issued Books 
+                          Peminjaman Buku
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Student Name</th>
-                                            <th>Book Name</th>
+                                            <th>No</th>
+                                            <th>Nama</th>
+                                            <th>Judul</th>
                                             <th>ISBN </th>
-                                            <th>Issued Date</th>
-                                            <th>Return Date</th>
+                                            <th>Tanggal Peminjaman</th>
+                                            <th>Tanggal pengembalian</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -119,7 +119,7 @@ foreach($results as $result)
                                             <td class="center"><?php echo htmlentities($result->IssuesDate);?></td>
                                             <td class="center"><?php if($result->ReturnDate=="")
                                             {
-                                                echo htmlentities("Not Return Yet");
+                                                echo htmlentities("Belum Dikembalikan");
                                             } else {
 
 

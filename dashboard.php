@@ -33,7 +33,7 @@ else{?>
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">ADMIN DASHBOARD</h4>
+                <h4 class="header-line">DASHBOARD</h4>
                 
                             </div>
 
@@ -58,11 +58,11 @@ $issuedbooks=$query1->rowCount();
 ?>
 
                             <h3><?php echo htmlentities($issuedbooks);?> </h3>
-                            Book Issued
+                            Peminjaman Buku
                         </div>
                     </div>
              
-               <div class="col-md-3 col-sm-3 col-xs-6">
+               <!-- <div class="col-md-3 col-sm-3 col-xs-6">
                       <div class="alert alert-warning back-widget-set text-center">
                             <i class="fa fa-recycle fa-5x"></i>
 <?php 
@@ -77,9 +77,9 @@ $returnedbooks=$query2->rowCount();
 ?>
 
                             <h3><?php echo htmlentities($returnedbooks);?></h3>
-                          Books Not Returned Yet
+                          Buku Telah Dikembalikan
                         </div>
-                    </div>
+                    </div> -->
         </div>
 
 

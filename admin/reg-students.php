@@ -66,7 +66,7 @@ header('location:reg-students.php');
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Manage Reg Students</h4>
+                <h4 class="header-line">Kelola Anggota</h4>
     </div>
 
 
@@ -76,21 +76,21 @@ header('location:reg-students.php');
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                          Reg Students
+                          Data ANGGOT
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Student ID</th>
-                                            <th>Student Name</th>
-                                            <th>Email id </th>
-                                            <th>Mobile Number</th>
-                                            <th>Reg Date</th>
+                                            <th>No</th>
+                                            <th>No KTA</th>
+                                            <th>Na</th>
+                                            <th>Email </th>
+                                            <th>No Telp</th>
+                                            <th>Tanggal Registrasi</th>
                                             <th>Status</th>
-                                            <th>Action</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>

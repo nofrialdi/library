@@ -38,7 +38,7 @@ header('location:manage-categories.php');
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Online Library Management System | Add Categories</title>
+    <title>Online Library Management System | Tambah Kategori</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -58,7 +58,7 @@ header('location:manage-categories.php');
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Add category</h4>
+                <h4 class="header-line">Tambah Kategori</h4>
                 
                             </div>
 
@@ -67,29 +67,29 @@ header('location:manage-categories.php');
 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3"">
 <div class="panel panel-info">
 <div class="panel-heading">
-Category Info
+Info Kategori
 </div>
 <div class="panel-body">
 <form role="form" method="post">
 <div class="form-group">
-<label>Category Name</label>
+<label>Kategori</label>
 <input class="form-control" type="text" name="category" autocomplete="off" required />
 </div>
 <div class="form-group">
 <label>Status</label>
  <div class="radio">
 <label>
-<input type="radio" name="status" id="status" value="1" checked="checked">Active
+<input type="radio" name="status" id="status" value="1" checked="checked">Aktif
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="status" id="status" value="0">Inactive
+<input type="radio" name="status" id="status" value="0">Tidak Aktif
 </label>
 </div>
 
 </div>
-<button type="submit" name="create" class="btn btn-info">Create </button>
+<button type="submit" name="create" class="btn btn-info">Tambah </button>
 
                                     </form>
                             </div>

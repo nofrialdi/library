@@ -93,7 +93,7 @@ error:function (){}
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Issued Book Details</h4>
+                <h4 class="header-line">Detail Peminjaman</h4>
                 
                             </div>
 
@@ -102,7 +102,7 @@ error:function (){}
 <div class="col-md-10 col-sm-6 col-xs-12 col-md-offset-1"">
 <div class="panel panel-info">
 <div class="panel-heading">
-Issued Book Details
+Detail Peminjaman
 </div>
 <div class="panel-body">
 <form role="form" method="post">
@@ -123,12 +123,12 @@ foreach($results as $result)
 
 
 <div class="form-group">
-<label>Student Name :</label>
+<label>Nama :</label>
 <?php echo htmlentities($result->FullName);?>
 </div>
 
 <div class="form-group">
-<label>Book Name :</label>
+<label>Judul Buku :</label>
 <?php echo htmlentities($result->BookName);?>
 </div>
 
@@ -139,16 +139,16 @@ foreach($results as $result)
 </div>
 
 <div class="form-group">
-<label>Book Issued Date :</label>
+<label>Dipinjam Tanggal :</label>
 <?php echo htmlentities($result->IssuesDate);?>
 </div>
 
 
 <div class="form-group">
-<label>Book Returned Date :</label>
+<label>Dikembalikan Tanggal :</label>
 <?php if($result->ReturnDate=="")
                                             {
-                                                echo htmlentities("Not Return Yet");
+                                                echo htmlentities("Buku Belum di Kembalikan");
                                             } else {
 
 
@@ -158,7 +158,7 @@ foreach($results as $result)
 </div>
 
 <div class="form-group">
-<label>Fine (in USD) :</label>
+<label>Denda :</label>
 <?php 
 if($result->fine=="")
 {?>
@@ -171,7 +171,7 @@ echo htmlentities($result->fine);
 </div>
  <?php if($result->RetrunStatus==0){?>
 
-<button type="submit" name="return" id="submit" class="btn btn-info">Return Book </button>
+<button type="submit" name="return" id="submit" class="btn btn-info">Perbarui </button>
 
  </div>
 

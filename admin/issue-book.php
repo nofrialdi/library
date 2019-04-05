@@ -97,7 +97,7 @@ error:function (){}
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Issue a New Book</h4>
+                <h4 class="header-line">Tambah Peminjam</h4>
                 
                             </div>
 
@@ -106,13 +106,13 @@ error:function (){}
 <div class="col-md-10 col-sm-6 col-xs-12 col-md-offset-1"">
 <div class="panel panel-info">
 <div class="panel-heading">
-Issue a New Book
+Tambah Peminjam
 </div>
 <div class="panel-body">
 <form role="form" method="post">
 
 <div class="form-group">
-<label>Srtudent id<span style="color:red;">*</span></label>
+<label>Nomor KTA<span style="color:red;">*</span></label>
 <input class="form-control" type="text" name="studentid" id="studentid" onBlur="getstudent()" autocomplete="off"  required />
 </div>
 
@@ -125,7 +125,7 @@ Issue a New Book
 
 
 <div class="form-group">
-<label>ISBN Number or Book Title<span style="color:red;">*</span></label>
+<label>Nomor ISBN<span style="color:red;">*</span></label>
 <input class="form-control" type="text" name="booikid" id="bookid" onBlur="getbook()"  required="required" />
 </div>
 
@@ -135,7 +135,7 @@ Issue a New Book
    
  </select>
  </div>
-<button type="submit" name="issue" id="submit" class="btn btn-info">Issue Book </button>
+<button type="submit" name="issue" id="submit" class="btn btn-info">Pinjam Buku </button>
 
                                     </form>
                             </div>

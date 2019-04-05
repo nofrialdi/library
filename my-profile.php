@@ -54,7 +54,7 @@ echo '<script>alert("Your profile has been updated")</script>';
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">My Profile</h4>
+                <h4 class="header-line">Profile Saya</h4>
                 
                             </div>
 
@@ -64,7 +64,7 @@ echo '<script>alert("Your profile has been updated")</script>';
 <div class="col-md-9 col-md-offset-1">
                <div class="panel panel-danger">
                         <div class="panel-heading">
-                           My Profile
+                           Profile Saya
                         </div>
                         <div class="panel-body">
                             <form name="signup" method="post">
@@ -82,12 +82,12 @@ foreach($results as $result)
 {               ?>  
 
 <div class="form-group">
-<label>Student ID : </label>
+<label>Nomor KTA : </label>
 <?php echo htmlentities($result->StudentId);?>
 </div>
 
 <div class="form-group">
-<label>Reg Date : </label>
+<label>Tanggal Registrasi : </label>
 <?php echo htmlentities($result->RegDate);?>
 </div>
 <?php if($result->UpdationDate!=""){?>
@@ -109,18 +109,18 @@ foreach($results as $result)
 
 
 <div class="form-group">
-<label>Enter Full Name</label>
+<label>Nama</label>
 <input class="form-control" type="text" name="fullanme" value="<?php echo htmlentities($result->FullName);?>" autocomplete="off" required />
 </div>
 
 
 <div class="form-group">
-<label>Mobile Number :</label>
+<label>No Telp :</label>
 <input class="form-control" type="text" name="mobileno" maxlength="10" value="<?php echo htmlentities($result->MobileNumber);?>" autocomplete="off" required />
 </div>
                                         
 <div class="form-group">
-<label>Enter Email</label>
+<label>Email</label>
 <input class="form-control" type="email" name="email" id="emailid" value="<?php echo htmlentities($result->EmailId);?>"  autocomplete="off" required readonly />
 </div>
 <?php }} ?>

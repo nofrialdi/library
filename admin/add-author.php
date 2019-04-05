@@ -56,7 +56,7 @@ header('location:manage-authors.php');
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Add Author</h4>
+                <h4 class="header-line">Tambah Pengarang</h4>
                 
                             </div>
 
@@ -65,16 +65,16 @@ header('location:manage-authors.php');
 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3"">
 <div class="panel panel-info">
 <div class="panel-heading">
-Author Info
+Info Pengarang
 </div>
 <div class="panel-body">
 <form role="form" method="post">
 <div class="form-group">
-<label>Author Name</label>
+<label>Nama Pengarang</label>
 <input class="form-control" type="text" name="author" autocomplete="off"  required />
 </div>
 
-<button type="submit" name="create" class="btn btn-info">Add </button>
+<button type="submit" name="create" class="btn btn-info">Tambah </button>
 
                                     </form>
                             </div>
