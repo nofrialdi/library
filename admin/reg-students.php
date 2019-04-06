@@ -76,7 +76,7 @@ header('location:reg-students.php');
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                          Data ANGGOT
+                          Data ANGGOTA
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -85,7 +85,11 @@ header('location:reg-students.php');
                                         <tr>
                                             <th>No</th>
                                             <th>No KTA</th>
-                                            <th>Na</th>
+                                            <th>Nama</th>
+                                            <th>Pangkat / Golongan</th>
+                                            <th>NRP / NIP</th>
+                                            <th>Jabatan</th>
+                                            <th>Satuan</th>
                                             <th>Email </th>
                                             <th>No Telp</th>
                                             <th>Tanggal Registrasi</th>
@@ -107,6 +111,10 @@ foreach($results as $result)
                                             <td class="center"><?php echo htmlentities($cnt);?></td>
                                             <td class="center"><?php echo htmlentities($result->StudentId);?></td>
                                             <td class="center"><?php echo htmlentities($result->FullName);?></td>
+                                            <td class="center"><?php echo htmlentities($result->Pangkat);?></td>
+                                            <td class="center"><?php echo htmlentities($result->NRP);?></td>
+                                            <td class="center"><?php echo htmlentities($result->Jabatan);?></td>
+                                            <td class="center"><?php echo htmlentities($result->Satuan);?></td>
                                             <td class="center"><?php echo htmlentities($result->EmailId);?></td>
                                             <td class="center"><?php echo htmlentities($result->MobileNumber);?></td>
                                              <td class="center"><?php echo htmlentities($result->RegDate);?></td>

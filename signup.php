@@ -18,11 +18,15 @@ fputs($fp , "$hits[0]");
 fclose($fp); 
 $StudentId= $hits[0];   
 $fname=$_POST['fullanme'];
+$pangkat=$_POST['pangkat'];
+$nrp=$_POST['nrp'];
+$jabatan=$_POST['jabatan'];
+$satuan=$_POST['satuan'];
 $mobileno=$_POST['mobileno'];
 $email=$_POST['email']; 
 $password=md5($_POST['password']); 
 $status=1;
-$sql="INSERT INTO  tblstudents(StudentId,FullName,MobileNumber,EmailId,Password,Status) VALUES(:StudentId,:fname,:mobileno,:email,:password,:status)";
+$sql="INSERT INTO  tblstudents(StudentId,FullName,MobileNumber,EmailId,Password,Status,Pangkat,NRP,Jabatan,Satuan) VALUES(:StudentId,:fname,:mobileno,:email,:password,:status,:pangkat,:nrp,:jabatan,:satuan)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':StudentId',$StudentId,PDO::PARAM_STR);
 $query->bindParam(':fname',$fname,PDO::PARAM_STR);
@@ -30,6 +34,11 @@ $query->bindParam(':mobileno',$mobileno,PDO::PARAM_STR);
 $query->bindParam(':email',$email,PDO::PARAM_STR);
 $query->bindParam(':password',$password,PDO::PARAM_STR);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
+$query->bindParam(':pangkat',$pangkat,PDO::PARAM_STR);
+$query->bindParam(':nrp',$nrp,PDO::PARAM_STR);
+$query->bindParam(':jabatan',$jabatan,PDO::PARAM_STR);
+$query->bindParam(':satuan',$satuan,PDO::PARAM_STR);
+
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
@@ -115,29 +124,52 @@ error:function (){}
                         <div class="panel-body">
                             <form name="signup" method="post" onSubmit="return valid();">
 <div class="form-group">
-<label>Name</label>
+<label>Nama</label>
 <input class="form-control" type="text" name="fullanme" autocomplete="off" required />
 </div>
 
+<div class="form-group">
+<label>Pangkat /  Golongan</label>
+<input class="form-control" type="text" name="pangkat" autocomplete="off" required />
+</div>
 
 <div class="form-group">
-<label>Email</label>
+<label>NRP / NIP</label>
+<input class="form-control" type="text" name="nrp" autocomplete="off" required />
+</div>
+
+<div class="form-group">
+<label>Jabatan</label>
+<input class="form-control" type="text" name="jabatan" autocomplete="off" required />
+</div>
+
+<div class="form-group">
+<label>Satuan</label>
+<input class="form-control" type="text" name="satuan" autocomplete="off" required />
+</div>
+
+
+
+<div class="form-group">
+<label>No Telp</label>
 <input class="form-control" type="text" name="mobileno" maxlength="10" autocomplete="off" required />
 </div>
+
+
                                         
 <div class="form-group">
-<label>Enter Email</label>
+<label>Email</label>
 <input class="form-control" type="email" name="email" id="emailid" onBlur="checkAvailability()"  autocomplete="off" required  />
    <span id="user-availability-status" style="font-size:12px;"></span> 
 </div>
 
 <div class="form-group">
-<label>Enter Password</label>
+<label>Password</label>
 <input class="form-control" type="password" name="password" autocomplete="off" required  />
 </div>
 
 <div class="form-group">
-<label>Confirm Password </label>
+<label>Konfirmasi Password </label>
 <input class="form-control"  type="password" name="confirmpassword" autocomplete="off" required  />
 </div>
  <div class="form-group">
