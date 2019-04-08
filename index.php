@@ -44,79 +44,122 @@ echo "<script>alert('Invalid Details');</script>";
 }
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Online Library Management System | </title>
-    <!-- BOOTSTRAP CORE STYLE  -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FONT AWESOME STYLE  -->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- CUSTOM STYLE  -->
-    <link href="assets/css/style_login.css" rel="stylesheet" />
-    <!-- GOOGLE FONT -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-
-</head>
-<body>
-    <!------MENU SECTION START-->
-<?php include('includes/header_login.php');?>
-<!-- MENU SECTION END-->
-<div class="content-wrapper">
-<div class="container">
-<div class="row pad-botm">
-<div class="col-md-12">
-<h4 class="header-line">USER LOGIN FORM</h4>
-</div>
-</div>
-             
-<!--LOGIN PANEL START-->           
-<div class="row">
-<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3" >
-<div class="panel panel-info">
-<div class="panel-heading">
- LOGIN FORM
-</div>
-<div class="panel-body">
-<form role="form" method="post">
-
-<div class="form-group">
-<label>Enter Email id</label>
-<input class="form-control" type="text" name="emailid" required autocomplete="off" />
-</div>
-<div class="form-group">
-<label>Password</label>
-<input class="form-control" type="password" name="password" required autocomplete="off"  />
-<p class="help-block"><a href="user-forgot-password.php">Forgot Password</a></p>
-</div>
-
- <div class="form-group">
-<label>Verification code : </label>
-<input type="text" class="form-control1"  name="vercode" maxlength="5" autocomplete="off" required  style="height:25px;" />&nbsp;<img src="captcha.php">
-</div> 
-
- <button type="submit" name="login" class="btn btn-info">LOGIN </button> | <a href="signup.php">Not Register Yet</a>
-</form>
- </div>
-</div>
-</div>
-</div>  
-<!---LOGIN PABNEL END-->            
-             
- 
-    </div>
-    </div>
-     <!-- CONTENT-WRAPPER SECTION END-->
- <?php include('includes/footer.php');?>
-      <!-- FOOTER SECTION END-->
-    <script src="assets/js/jquery-1.10.2.js"></script>
-    <!-- BOOTSTRAP SCRIPTS  -->
-    <script src="assets/js/bootstrap.js"></script>
-      <!-- CUSTOM SCRIPTS  -->
-    <script src="assets/js/custom.js"></script>
-
-</body>
+<html lang="en">
+   <head>
+      <title>Grass login & Sign up Form a Flat Responsive Widget Template :: w3layouts </title>
+      <!-- Meta tags -->
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="keywords" content="Grass login & Sign up Form Responsive Widget, Audio and Video players, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design"
+         />
+      <script>
+         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+      </script>
+      <!-- Meta tags -->
+      <!-- font-awesome icons -->
+      <link href="css/fontawesome-all.min.css" rel="stylesheet" type="text/css" media="all">
+      <!-- //font-awesome icons -->
+      <!--stylesheets-->
+      <link href="css/style.css" rel='stylesheet' type='text/css' media="all">
+      <!--//style sheet end here-->
+      <link href="//fonts.googleapis.com/css?family=Barlow:300,400,500" rel="stylesheet">
+   </head>
+   <body>
+      <h1 class="header-w3ls">
+         
+      </h1>
+      <div class="art-bothside">
+         <div class="sap_tabs">
+            <div id="horizontalTab">
+               <ul class="resp-tabs-list">
+                  <li class="resp-tab-item"><span>Login User</span></li>
+                  <li class="resp-tab-item"><span>Login Admin</span></li>
+               </ul>
+               <div class="clearfix"> </div>
+               <div class="resp-tabs-container">
+                  <div class="tab-1 resp-tab-content">
+                     <div class="swm-right-w3ls">
+                        <form role="form" method="post">
+                           <div class="main">
+                              <div class="icon-head-wthree">
+                                 <h2>Login User</h2>
+                              </div>
+                              <div class="form-left-w3l">
+                                 <input type="email" name="emailid" placeholder="Email" required="">
+                              </div>
+                              <div class="form-right-w3ls ">
+                                 <input type="password" name="password" placeholder="Passwordsss" required="">
+                              </div>
+                               <div class="form-group">
+                                 <label>Verification code : </label>
+                                 <input type="text" class="form-control1"  name="vercode" maxlength="5" autocomplete="off" required  style="height:25px;" />&nbsp;<img src="captcha.php">
+                                 </div> 
+                              <!-- <div class="btnn">
+                                 
+                                 <a href="#" class="for">Forgot password...?</a>  
+                              </div> -->
+                              <div class="social-icons">
+                              <ul>
+                                 <li>
+                                    <a href="#">
+                                    <button width="300px" type="submit" name="login" >LogIn</button>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="#">
+                                    <button width="300px" type="submit" >Daftar</button>
+                                    </a>
+                                 </li>
+                               
+                              </ul>
+                           </div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+                  <div class="tab-1 resp-tab-content">
+                     <div class="swm-left-w3ls">
+                        <form action="#" method="post">
+                           <div class="main">
+                              <div class="icon-head-wthree">
+                                 <h2>Login Admin</h2>
+                              </div>
+                              <div class="form-left-to-w3l">
+                                 <input type="text" name="name" placeholder="Name" required="">
+                              </div>
+                              <div class="form-left-w3l">
+                                 <input type="email" name="email" placeholder="Email" required="">
+                              </div>
+                              <div class="form-right-w3ls ">
+                                 <input type="password" name="password" placeholder="Password" required="">
+                              </div>
+                              <div class="btnn">
+                                 <button type="submit">Sign Up</button><br>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <div class="copy">
+         <p>&copy;2018 Grass login & Sign up Form. All Rights Reserved | Design by <a href="http://www.W3Layouts.com" target="_blank">W3Layouts</a></p>
+      </div>
+      <!--js working-->
+      <script src='js/jquery-2.2.3.min.js'></script>
+      <!--//js working-->
+      <script src="js/easyResponsiveTabs.js"></script>
+      <script>
+         $(document).ready(function () {
+         	$('#horizontalTab').easyResponsiveTabs({
+         		type: 'default', //Types: default, vertical, accordion           
+         		width: 'auto', //auto or any width like 600px
+         		fit: true // 100% fit in a container
+         	});
+         });
+      </script>
+   </body>
 </html>
