@@ -94,6 +94,7 @@ echo "<script>alert('Invalid Details');</script>";
                                  <label>Verification code : </label>
                                  <input type="text" class="form-control1"  name="vercode" maxlength="5" autocomplete="off" required  style="height:25px;" />&nbsp;<img src="captcha.php">
                                  </div> 
+                                 
                               <!-- <div class="btnn">
                                  
                                  <a href="#" class="for">Forgot password...?</a>  
