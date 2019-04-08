@@ -15,8 +15,13 @@ $category=$_POST['category'];
 $author=$_POST['author'];
 $isbn=$_POST['isbn'];
 $price=$_POST['price'];
+$image=$_FILES['image']['name'];
+
+move_uploaded_file($_FILES['image']['tmp_name'],"GambarBuku/".$image);
+
 $bookid=intval($_GET['bookid']);
-$sql="update  tblbooks set BookName=:bookname,CatId=:category,AuthorId=:author,ISBNNumber=:isbn,BookPrice=:price where id=:bookid";
+$sql="update  tblbooks set BookName=:bookname,CatId=:category,AuthorId=:author,ISBNNumber=:isbn,BookPrice=:price,Gambar=:image where id=:bookid";
+$upload_image = 'GambarBuku/'.$image;
 $query = $dbh->prepare($sql);
 $query->bindParam(':bookname',$bookname,PDO::PARAM_STR);
 $query->bindParam(':category',$category,PDO::PARAM_STR);
@@ -24,6 +29,7 @@ $query->bindParam(':author',$author,PDO::PARAM_STR);
 $query->bindParam(':isbn',$isbn,PDO::PARAM_STR);
 $query->bindParam(':price',$price,PDO::PARAM_STR);
 $query->bindParam(':bookid',$bookid,PDO::PARAM_STR);
+$query->bindParam(':image',$upload_image);
 $query->execute();
 $_SESSION['msg']="Book info updated successfully";
 header('location:manage-books.php');
@@ -70,10 +76,10 @@ header('location:manage-books.php');
 Info Buku
 </div>
 <div class="panel-body">
-<form role="form" method="post">
+<form role="form" method="post" enctype="multipart/form-data">
 <?php 
 $bookid=intval($_GET['bookid']);
-$sql = "SELECT tblbooks.BookName,tblcategory.CategoryName,tblcategory.id as cid,tblauthors.AuthorName,tblauthors.id as athrid,tblbooks.ISBNNumber,tblbooks.BookPrice,tblbooks.id as bookid from  tblbooks join tblcategory on tblcategory.id=tblbooks.CatId join tblauthors on tblauthors.id=tblbooks.AuthorId where tblbooks.id=:bookid";
+$sql = "SELECT tblbooks.BookName,tblbooks.Gambar,tblcategory.CategoryName,tblcategory.id as cid,tblauthors.AuthorName,tblauthors.id as athrid,tblbooks.ISBNNumber,tblbooks.BookPrice,tblbooks.id as bookid from  tblbooks join tblcategory on tblcategory.id=tblbooks.CatId join tblauthors on tblauthors.id=tblbooks.AuthorId where tblbooks.id=:bookid";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':bookid',$bookid,PDO::PARAM_STR);
 $query->execute();
@@ -146,6 +152,12 @@ continue;
 <label>Nomor ISBN<span style="color:red;">*</span></label>
 <input class="form-control" type="text" name="isbn" value="<?php echo htmlentities($result->ISBNNumber);?>"  required="required" />
 <p class="help-block">An ISBN is an International Standard Book Number.ISBN Must be unique</p>
+</div>
+
+<div class="form-group">
+<label for="image">Gambar Buku<span style="color:red;">*</span></label>
+<input class="form-control" type="file" name="image"  />
+<img src="<?php echo($result->Gambar); ?>">
 </div>
 
  <div class="form-group">

@@ -12,10 +12,12 @@ if(isset($_POST['issue']))
 {
 $studentid=strtoupper($_POST['studentid']);
 $bookid=$_POST['bookdetails'];
-$sql="INSERT INTO  tblissuedbookdetails(StudentID,BookId) VALUES(:studentid,:bookid)";
+$batas=$_POST['batas'];
+$sql="INSERT INTO  tblissuedbookdetails(StudentID,BookId,Batas) VALUES(:studentid,:bookid,:batas)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':studentid',$studentid,PDO::PARAM_STR);
 $query->bindParam(':bookid',$bookid,PDO::PARAM_STR);
+$query->bindParam(':batas',$batas);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
@@ -92,60 +94,59 @@ error:function (){}
       <!------MENU SECTION START-->
 <?php include('includes/header.php');?>
 <!-- MENU SECTION END-->
-    <div class="content-wra
     <div class="content-wrapper">
          <div class="container">
-        <div class="row pad-botm">
-            <div class="col-md-12">
-                <h4 class="header-line">Tambah Peminjam</h4>
+            <div class="row pad-botm">
+                <div class="col-md-12">
+                    <h4 class="header-line">Tambah Peminjam</h4>
                 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10 col-sm-6 col-xs-12 col-md-offset-1">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                        Tambah Peminjam
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" method="post">
+                            <div class="form-group">
+                                <label>Nomor KTA<span style="color:red;">*</span></label>
+                                <input class="form-control" type="text" name="studentid" id="studentid" onBlur="getstudent()" autocomplete="off"  required />
                             </div>
 
-</div>
-<div class="row">
-<div class="col-md-10 col-sm-6 col-xs-12 col-md-offset-1"">
-<div class="panel panel-info">
-<div class="panel-heading">
-Tambah Peminjam
-</div>
-<div class="panel-body">
-<form role="form" method="post">
-
-<div class="form-group">
-<label>Nomor KTA<span style="color:red;">*</span></label>
-<input class="form-control" type="text" name="studentid" id="studentid" onBlur="getstudent()" autocomplete="off"  required />
-</div>
-
-<div class="form-group">
-<span id="get_student_name" style="font-size:16px;"></span> 
-</div>
-
-
-
-
-
-<div class="form-group">
-<label>Nomor ISBN<span style="color:red;">*</span></label>
-<input class="form-control" type="text" name="booikid" id="bookid" onBlur="getbook()"  required="required" />
-</div>
-
- <div class="form-group">
-
-  <select  class="form-control" name="bookdetails" id="get_book_name" readonly>
-   
- </select>
- </div>
-<button type="submit" name="issue" id="submit" class="btn btn-info">Pinjam Buku </button>
-
-                                    </form>
+                            <div class="form-group">
+                                <span id="get_student_name" style="font-size:16px;"></span> 
                             </div>
-                        </div>
+
+                            <div class="form-group">
+                                <label>Nomor ISBN<span style="color:red;">*</span></label>
+                                <input class="form-control" type="text" name="booikid" id="bookid" onBlur="getbook()"  required="required" />
                             </div>
+
+                          
+
+                            <div class="form-group">
+                                <select  class="form-control" name="bookdetails" id="get_book_name" readonly>
+                                    </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Tanggal Batas Pengembalian<span style="color:red;">*</span></label>
+                                <input class="form-control" type="date" name="batas" required />
+                            </div>
+
+
+
+                                <button type="submit" name="issue" id="submit" class="btn btn-info">Pinjam Buku </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
         </div>
-   
-    </div>
-    </div>
+   </div>
+</div>
      <!-- CONTENT-WRAPPER SECTION END-->
   <?php include('includes/footer.php');?>
       <!-- FOOTER SECTION END-->

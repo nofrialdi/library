@@ -69,7 +69,7 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
     <!-- FONT AWESOME STYLE  -->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLE  -->
-    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/style_login.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 <script type="text/javascript">
@@ -103,7 +103,7 @@ error:function (){}
 </head>
 <body>
     <!------MENU SECTION START-->
-<?php include('includes/header.php');?>
+<?php include('includes/header_login.php');?>
 <!-- MENU SECTION END-->
     <div class="content-wrapper">
          <div class="container">

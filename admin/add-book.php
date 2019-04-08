@@ -15,13 +15,20 @@ $category=$_POST['category'];
 $author=$_POST['author'];
 $isbn=$_POST['isbn'];
 $price=$_POST['price'];
-$sql="INSERT INTO  tblbooks(BookName,CatId,AuthorId,ISBNNumber,BookPrice) VALUES(:bookname,:category,:author,:isbn,:price)";
+
+$image=$_FILES['image']['name'];
+
+move_uploaded_file($_FILES['image']['tmp_name'],"GambarBuku/".$image);
+
+$sql="INSERT INTO  tblbooks(BookName,CatId,AuthorId,ISBNNumber,BookPrice,Gambar) VALUES(:bookname,:category,:author,:isbn,:price,:image)";
+$upload_image = 'GambarBuku/'.$image;
 $query = $dbh->prepare($sql);
 $query->bindParam(':bookname',$bookname,PDO::PARAM_STR);
 $query->bindParam(':category',$category,PDO::PARAM_STR);
 $query->bindParam(':author',$author,PDO::PARAM_STR);
 $query->bindParam(':isbn',$isbn,PDO::PARAM_STR);
 $query->bindParam(':price',$price,PDO::PARAM_STR);
+$query->bindParam(':image',$upload_image);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
@@ -59,7 +66,7 @@ header('location:manage-books.php');
       <!------MENU SECTION START-->
 <?php include('includes/header.php');?>
 <!-- MENU SECTION END-->
-    <div class="content-wra
+   
     <div class="content-wrapper">
          <div class="container">
         <div class="row pad-botm">
@@ -76,7 +83,7 @@ header('location:manage-books.php');
 Info Buku
 </div>
 <div class="panel-body">
-<form role="form" method="post">
+<form role="form" method="post" enctype="multipart/form-data">
 <div class="form-group">
 <label>Judul Buku<span style="color:red;">*</span></label>
 <input class="form-control" type="text" name="bookname" autocomplete="off"  required />
@@ -128,6 +135,11 @@ foreach($results as $result)
 <label>Nomor ISBN<span style="color:red;">*</span></label>
 <input class="form-control" type="text" name="isbn"  required="required" autocomplete="off"  />
 <p class="help-block">ISBN adalah Nomor Buku Standar Internasional. ISBN Harus unik</p>
+</div>
+
+<div class="form-group">
+<label for="image">Gambar Buku<span style="color:red;">*</span></label>
+<input class="form-control" type="file" name="image"  />
 </div>
 
  <div class="form-group">
