@@ -88,10 +88,10 @@ echo "<script>alert('Invalid Details');</script>";
                                  <input type="email" name="emailid" placeholder="Email" required="">
                               </div>
                               <div class="form-right-w3ls ">
-                                 <input type="password" name="password" placeholder="Passwordsss" required="">
+                                 <input type="password" name="password" placeholder="Password" required="">
                               </div>
                                <div class="form-group">
-                                 <label>Verification code : </label>
+                                 <label style="color: #fff;">Verification code : </label>
                                  <input type="text" class="form-control1"  name="vercode" maxlength="5" autocomplete="off" required  style="height:25px;" />&nbsp;<img src="captcha.php">
                                  </div> 
                                  
@@ -120,22 +120,26 @@ echo "<script>alert('Invalid Details');</script>";
                   </div>
                   <div class="tab-1 resp-tab-content">
                      <div class="swm-left-w3ls">
-                        <form action="#" method="post">
+                        <form action="login_script.php" method="post">
                            <div class="main">
                               <div class="icon-head-wthree">
                                  <h2>Login Admin</h2>
                               </div>
                               <div class="form-left-to-w3l">
-                                 <input type="text" name="name" placeholder="Name" required="">
+                                 <input type="text" name="username" placeholder="Name" required="">
                               </div>
-                              <div class="form-left-w3l">
+                              <!-- <div class="form-left-w3l">
                                  <input type="email" name="email" placeholder="Email" required="">
-                              </div>
+                              </div> -->
                               <div class="form-right-w3ls ">
                                  <input type="password" name="password" placeholder="Password" required="">
                               </div>
+                              <div class="form-group">
+                              <label style="color: #fff">Verification code : </label>
+                              <input type="text"  name="vercode" maxlength="5" autocomplete="off" required style="width: 150px; height: 25px;" />&nbsp;<img src="captcha.php">
+                              </div>  <br>
                               <div class="btnn">
-                                 <button type="submit">Sign Up</button><br>
+                                 <button type="submit" name="login">Login</button><br>
                               </div>
                            </div>
                         </form>
