@@ -132,9 +132,8 @@ foreach($results as $result)
 </div>
 
 <div class="form-group">
-<label>Nomor ISBN<span style="color:red;">*</span></label>
+<label>Kode Rak<span style="color:red;">*</span></label>
 <input class="form-control" type="text" name="isbn"  required="required" autocomplete="off"  />
-<p class="help-block">ISBN adalah Nomor Buku Standar Internasional. ISBN Harus unik</p>
 </div>
 
 <div class="form-group">

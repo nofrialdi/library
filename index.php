@@ -57,10 +57,10 @@ echo "<script>alert('Invalid Details');</script>";
       </script>
       <!-- Meta tags -->
       <!-- font-awesome icons -->
-      <link href="css/fontawesome-all.min.css" rel="stylesheet" type="text/css" media="all">
+      <link href="assets/login/css/fontawesome-all.min.css" rel="stylesheet" type="text/css" media="all">
       <!-- //font-awesome icons -->
       <!--stylesheets-->
-      <link href="css/style.css" rel='stylesheet' type='text/css' media="all">
+      <link href="assets/login/css/style.css" rel='stylesheet' type='text/css' media="all">
       <!--//style sheet end here-->
       <link href="//fonts.googleapis.com/css?family=Barlow:300,400,500" rel="stylesheet">
    </head>
@@ -85,14 +85,14 @@ echo "<script>alert('Invalid Details');</script>";
                                  <h2>Login User</h2>
                               </div>
                               <div class="form-left-w3l">
-                                 <input type="email" name="emailid" placeholder="Email" required="">
+                                 <input type="email" name="emailid" placeholder="Email" >
                               </div>
                               <div class="form-right-w3ls ">
-                                 <input type="password" name="password" placeholder="Password" required="">
+                                 <input type="password" name="password" placeholder="Password" >
                               </div>
                                <div class="form-group">
                                  <label style="color: #fff;">Verification code : </label>
-                                 <input type="text" class="form-control1"  name="vercode" maxlength="5" autocomplete="off" required  style="height:25px;" />&nbsp;<img src="captcha.php">
+                                 <input type="text" class="form-control1"  name="vercode" maxlength="5" autocomplete="off"  style="height:25px;" />&nbsp;<img src="captcha.php">
                                  </div> 
                                  
                               <!-- <div class="btnn">
@@ -107,9 +107,11 @@ echo "<script>alert('Invalid Details');</script>";
                                     </a>
                                  </li>
                                  <li>
-                                    <a href="#">
-                                    <button width="300px" type="submit" >Daftar</button>
+                                    
+                                    <a href="signup.php">
+                                    <button width="300px" style="background-color: #f47721; width: 200px; height: 40px; font-size: 15px;text-decoration:none; border: 0; color: #fff;" type="button" >Daftar</button>
                                     </a>
+                                 
                                  </li>
                                
                               </ul>
@@ -126,21 +128,21 @@ echo "<script>alert('Invalid Details');</script>";
                                  <h2>Login Admin</h2>
                               </div>
                               <div class="form-left-to-w3l">
-                                 <input type="text" name="username" placeholder="Name" required="">
+                                 <input type="text" name="username" placeholder="Name" >
                               </div>
                               <!-- <div class="form-left-w3l">
                                  <input type="email" name="email" placeholder="Email" required="">
                               </div> -->
                               <div class="form-right-w3ls ">
-                                 <input type="password" name="password" placeholder="Password" required="">
+                                 <input type="password" name="password" placeholder="Password">
                               </div>
                               <div class="form-group">
                               <label style="color: #fff">Verification code : </label>
-                              <input type="text"  name="vercode" maxlength="5" autocomplete="off" required style="width: 150px; height: 25px;" />&nbsp;<img src="captcha.php">
+                              <input type="text"  name="vercode" maxlength="5" autocomplete="off" style="width: 150px; height: 25px;" />&nbsp;<img src="captcha.php">
                               </div>  <br>
                               <div class="btnn">
                                  <button type="submit" name="login">Login</button><br>
-                                 
+
                               </div>
                            </div>
                         </form>
@@ -155,9 +157,9 @@ echo "<script>alert('Invalid Details');</script>";
          <p>&copy;2018 Grass login & Sign up Form. All Rights Reserved | Design by <a href="http://www.W3Layouts.com" target="_blank">W3Layouts</a></p>
       </div>
       <!--js working-->
-      <script src='js/jquery-2.2.3.min.js'></script>
+      <script src='assets/login/js/jquery-2.2.3.min.js'></script>
       <!--//js working-->
-      <script src="js/easyResponsiveTabs.js"></script>
+      <script src="assets/login/js/easyResponsiveTabs.js"></script>
       <script>
          $(document).ready(function () {
          	$('#horizontalTab').easyResponsiveTabs({
