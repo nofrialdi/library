@@ -114,8 +114,8 @@ header('location:manage-categories.php');
                                             <th style="text-align: center;">No</th>
                                             <th style="text-align: center;">Kategori</th>
                                             <th style="text-align: center;">Status</th>
-                                            <th style="text-align: center;">Dibuat Tanggal</th>
-                                            <th style="text-align: center;">Diperbarui Tanggal</th>
+                                            <!-- <th style="text-align: center;">Dibuat Tanggal</th>
+                                            <th style="text-align: center;">Diperbarui Tanggal</th> -->
                                             <th style="text-align: center;">Aksi</th>
                                         </tr>
                                     </thead>
@@ -137,8 +137,8 @@ foreach($results as $result)
                                             <?php } else {?>
                                             <a href="#" class="btn btn-danger btn-xs">Tidak Aktif</a>
                                             <?php } ?></td>
-                                            <td class="center"><?php echo htmlentities($result->CreationDate);?></td>
-                                            <td class="center"><?php echo htmlentities($result->UpdationDate);?></td>
+                                            <!-- <td class="center"><?php echo htmlentities($result->CreationDate);?></td>
+                                            <td class="center"><?php echo htmlentities($result->UpdationDate);?></td> -->
                                             <td class="center">
 
                                             <a href="edit-category.php?catid=<?php echo htmlentities($result->id);?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button> 

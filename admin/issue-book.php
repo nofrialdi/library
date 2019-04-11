@@ -116,6 +116,8 @@ error:function (){}
                             </div>
 
                             <div class="form-group">
+                                <!-- <input type="text" id="get_student_name"> -->
+                                <span>Nama Anggota : </span>
                                 <span id="get_student_name" style="font-size:16px;"></span> 
                             </div>
 

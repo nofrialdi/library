@@ -92,7 +92,7 @@ header('location:reg-students.php');
                                             <th style="text-align: center;">Satuan</th>
                                             <th style="text-align: center;">Email </th>
                                             <th style="text-align: center;">No Telp</th>
-                                            <th style="text-align: center;">Tanggal Registrasi</th>
+                                            <!-- <th style="text-align: center;">Tanggal Registrasi</th> -->
                                             <th style="text-align: center;">Status</th>
                                             <th style="text-align: center;">Aksi</th>
                                         </tr>
@@ -117,7 +117,7 @@ foreach($results as $result)
                                             <td class="center"><?php echo htmlentities($result->Satuan);?></td>
                                             <td class="center"><?php echo htmlentities($result->EmailId);?></td>
                                             <td class="center"><?php echo htmlentities($result->MobileNumber);?></td>
-                                             <td class="center"><?php echo htmlentities($result->RegDate);?></td>
+                                            <!--  <td class="center"><?php echo htmlentities($result->RegDate);?></td> -->
                                             <td class="center"><?php if($result->Status==1)
                                             {
                                                 echo htmlentities("Aktif");
@@ -130,10 +130,10 @@ foreach($results as $result)
                                             <td class="center">
 <?php if($result->Status==1)
  {?>
-<a href="reg-students.php?inid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to block this student?');"" >  <button class="btn btn-danger"> Inactive</button>
+<a href="reg-students.php?inid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to block this student?');"" >  <button class="btn btn-danger"> Menonaktifkan</button>
 <?php } else {?>
 
-                                            <a href="reg-students.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to active this student?');""><button class="btn btn-primary"> Active</button> 
+                                            <a href="reg-students.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to active this student?');""><button class="btn btn-primary"> Aktifkan</button> 
                                             <?php } ?>
                                           
                                             </td>

@@ -151,7 +151,7 @@ foreach($results as $result)
                                         
 <div class="form-group">
 <label>Email</label>
-<input class="form-control" type="email" name="email" id="emailid" value="<?php echo htmlentities($result->EmailId);?>"  autocomplete="off" required readonly />
+<input class="form-control" type="email" name="email" id="emailid" value="<?php echo htmlentities($result->EmailId);?>"  autocomplete="off" required  />
 </div>
 <?php }} ?>
                               

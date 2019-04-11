@@ -139,7 +139,7 @@ foreach($results as $result)
                                             <td class="center" ><?php echo htmlentities($result->ISBNNumber);?></td>
                                             <td class="center" width="200px" height="200px" ><img  src="<?php echo($result->Gambar); ?>"/></td>
                                           
-                                            <td class="center"><?php echo htmlentities($result->BookPrice);?></td>
+                                            <td class="center">Rp. <?php echo number_format($result->BookPrice, 0, ".", ".");?></td>
                                             <td class="center">
 
                                             <a href="edit-book.php?bookid=<?php echo htmlentities($result->bookid);?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button> 

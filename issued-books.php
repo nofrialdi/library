@@ -65,18 +65,20 @@ header('location:manage-books.php');
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Judul Buku</th>
-                                            <th>Kode Rak/Buku </th>
-                                            <th>Tanggal Peminjaman</th>
-                                            <th>Tanggal Pengembalian</th>
-                                            <th>Denda Kehilangan/Kerusakan (Rp)</th>
+                                            <th style="text-align: center;">No</th>
+                                            <th style="text-align: center;">Judul Buku</th>
+                                            <th style="text-align: center;">Kode Rak/Buku </th>
+                                            <th style="text-align: center;">Denda Kehilangan (Rp)</th>
+                                            <th style="text-align: center;">Tanggal Peminjaman</th>
+                                            <th style="text-align: center;">Tanggal Batas Pengembalian</th>
+                                            <th style="text-align: center;">Tanggal Pengembalian</th>                                      
+                                            <th style="text-align: center;">Denda Kehilangan/Kerusakan (Rp)</th>
                                         </tr>
                                     </thead>
                                     <tbody>
 <?php 
 $sid=$_SESSION['stdid'];
-$sql="SELECT tblbooks.BookName,tblbooks.ISBNNumber,tblissuedbookdetails.IssuesDate,tblissuedbookdetails.ReturnDate,tblissuedbookdetails.id as rid,tblissuedbookdetails.fine from  tblissuedbookdetails join tblstudents on tblstudents.StudentId=tblissuedbookdetails.StudentId join tblbooks on tblbooks.id=tblissuedbookdetails.BookId where tblstudents.StudentId=:sid order by tblissuedbookdetails.id desc";
+$sql="SELECT tblbooks.BookName,tblbooks.ISBNNumber,tblbooks.BookPrice,tblissuedbookdetails.IssuesDate,tblissuedbookdetails.Batas,tblissuedbookdetails.ReturnDate,tblissuedbookdetails.id as rid,tblissuedbookdetails.fine from  tblissuedbookdetails join tblstudents on tblstudents.StudentId=tblissuedbookdetails.StudentId join tblbooks on tblbooks.id=tblissuedbookdetails.BookId where tblstudents.StudentId=:sid order by tblissuedbookdetails.id desc";
 $query = $dbh -> prepare($sql);
 $query-> bindParam(':sid', $sid, PDO::PARAM_STR);
 $query->execute();
@@ -90,7 +92,9 @@ foreach($results as $result)
                                             <td class="center"><?php echo htmlentities($cnt);?></td>
                                             <td class="center"><?php echo htmlentities($result->BookName);?></td>
                                             <td class="center"><?php echo htmlentities($result->ISBNNumber);?></td>
+                                            <td class="center">Rp.<?php echo number_format ($result->BookPrice, 0, ".", ".");?></td>
                                             <td class="center"><?php echo htmlentities($result->IssuesDate);?></td>
+                                            <td class="center"><?php echo htmlentities($result->Batas);?></td>
                                             <td class="center"><?php if($result->ReturnDate=="")
                                             {?>
                                             <span style="color:red">
@@ -100,7 +104,9 @@ foreach($results as $result)
                                             echo htmlentities($result->ReturnDate);
                                         }
                                             ?></td>
-                                              <td class="center"><?php echo htmlentities($result->fine);?></td>
+                                            
+                                              <td class="center">Rp. <?php echo number_format($result->fine, 0, ".", ".");?></td>
+
                                          
                                         </tr>
  <?php $cnt=$cnt+1;}} ?>                                      

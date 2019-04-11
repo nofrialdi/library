@@ -114,8 +114,8 @@ header('location:manage-authors.php');
                                             <th style="text-align: center;">No</th>
                                             <th style="text-align: center;">Nama Pengarang</th>
                                          
-                                            <th style="text-align: center;">Dibuat</th>
-                                            <th style="text-align: center;">Diupdate</th>
+                                            <!-- <th style="text-align: center;">Dibuat</th>
+                                            <th style="text-align: center;">Diuperbarui</th> -->
                                             <th style="text-align: center;">Aksi</th>
                                         </tr>
                                     </thead>
@@ -132,8 +132,8 @@ foreach($results as $result)
                                         <tr class="odd gradeX">
                                             <td class="center"><?php echo htmlentities($cnt);?></td>
                                             <td class="center"><?php echo htmlentities($result->AuthorName);?></td>
-                                            <td class="center"><?php echo htmlentities($result->creationDate);?></td>
-                                            <td class="center"><?php echo htmlentities($result->UpdationDate);?></td>
+                                            <!-- <td class="center"><?php echo htmlentities($result->creationDate);?></td>
+                                            <td class="center"><?php echo htmlentities($result->UpdationDate);?></td> -->
                                             <td class="center">
 
                                             <a href="edit-author.php?athrid=<?php echo htmlentities($result->id);?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button> 

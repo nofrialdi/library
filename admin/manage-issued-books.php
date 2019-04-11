@@ -96,14 +96,18 @@ else{
                                             <th style="text-align: center;">Nama</th>
                                             <th style="text-align: center;">Judul</th>
                                             <th style="text-align: center;">Kode Rak/Buku </th>
+                                            <th style="text-align: center;">Denda Kehilangan (Rp)</th>
                                             <th style="text-align: center;">Tanggal Peminjaman</th>
                                             <th style="text-align: center;">Tanggal Batas Pengembalian</th>
-                                            <th style="text-align: center;">Tanggal / Status Pengembalian</th>
+                                            <th style="text-align: center;">Tanggal Pengembalian</th>
+                                            
+                                            <th style="text-align: center;">Denda (Rp)</th>
+
                                             <th style="text-align: center;">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-<?php $sql = "SELECT tblstudents.FullName,tblbooks.BookName,tblbooks.ISBNNumber,tblissuedbookdetails.IssuesDate,tblissuedbookdetails.ReturnDate,tblissuedbookdetails.Batas,tblissuedbookdetails.id as rid from  tblissuedbookdetails join tblstudents on tblstudents.StudentId=tblissuedbookdetails.StudentId join tblbooks on tblbooks.id=tblissuedbookdetails.BookId order by tblissuedbookdetails.id desc";
+<?php $sql = "SELECT tblstudents.FullName,tblbooks.BookName,tblbooks.BookPrice,tblbooks.ISBNNumber,tblissuedbookdetails.IssuesDate,tblissuedbookdetails.ReturnDate,tblissuedbookdetails.Batas,tblissuedbookdetails.fine,tblissuedbookdetails.id as rid from  tblissuedbookdetails join tblstudents on tblstudents.StudentId=tblissuedbookdetails.StudentId join tblbooks on tblbooks.id=tblissuedbookdetails.BookId order by tblissuedbookdetails.id desc";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -117,8 +121,10 @@ foreach($results as $result)
                                             <td class="center"><?php echo htmlentities($result->FullName);?></td>
                                             <td class="center"><?php echo htmlentities($result->BookName);?></td>
                                             <td class="center"><?php echo htmlentities($result->ISBNNumber);?></td>
+                                            <td class="center">Rp. <?php echo number_format($result->BookPrice, 0, ".", ".");?></td>
                                             <td class="center"><?php echo htmlentities($result->IssuesDate);?></td>
                                             <td class="center"><?php echo htmlentities($result->Batas);?></td>
+                                            
                                             <td class="center"><?php if($result->ReturnDate=="")
                                             {
                                                  echo "<span style='color:red'>";
@@ -129,6 +135,8 @@ foreach($results as $result)
                                             echo htmlentities($result->ReturnDate);
 }
                                             ?></td>
+                                            
+                                            <td class="center">Rp. <?php echo number_format($result->fine, 0, ".", ".");?></td>
                                             <td class="center">
 
                                             <a href="update-issue-bookdeails.php?rid=<?php echo htmlentities($result->rid);?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button> 
