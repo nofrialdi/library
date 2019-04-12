@@ -9,7 +9,7 @@ if(isset($_POST['login']))
 {
   //code for captach verification
 if ($_POST["vercode"] != $_SESSION["vercode"] OR $_SESSION["vercode"]=='')  {
-        echo "<script>alert('Incorrect verification code');</script>" ;
+        echo "<script>alert('Kode verifikasi salah');</script>" ;
     } 
         else {
 $email=$_POST['emailid'];
@@ -30,7 +30,7 @@ if($result->Status==1)
 $_SESSION['login']=$_POST['emailid'];
 echo "<script type='text/javascript'> document.location ='dashboard.php'; </script>";
 } else {
-echo "<script>alert('Your Account Has been blocked .Please contact admin');</script>";
+echo "<script>alert('Akun Anda Telah diblokir. Silakan hubungi admin');</script>";
 
 }
 }
@@ -38,7 +38,7 @@ echo "<script>alert('Your Account Has been blocked .Please contact admin');</scr
 } 
 
 else{
-echo "<script>alert('Invalid Details');</script>";
+echo "<script>alert('Data Tidak Valid');</script>";
 }
 }
 }
@@ -46,7 +46,7 @@ echo "<script>alert('Invalid Details');</script>";
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title>Grass login & Sign up Form a Flat Responsive Widget Template :: w3layouts </title>
+      <title>Perpustakaan Online </title>
       <!-- Meta tags -->
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -152,10 +152,12 @@ echo "<script>alert('Invalid Details');</script>";
             </div>
          </div>
       </div>
-      
       <div class="copy">
+                   <p style="color: #fff" align="center">&copy;2019 Perpustakaan Online |<a style="color: #fff" href="" target="_blank"  > Designed by : Mabes TNI</a></p> 
+                </div>
+      <!-- <div class="copy">
          <p>&copy;2018 Grass login & Sign up Form. All Rights Reserved | Design by <a href="http://www.W3Layouts.com" target="_blank">W3Layouts</a></p>
-      </div>
+      </div> -->
       <!--js working-->
       <script src='assets/login/js/jquery-2.2.3.min.js'></script>
       <!--//js working-->

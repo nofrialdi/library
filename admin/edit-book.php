@@ -31,7 +31,7 @@ $query->bindParam(':price',$price,PDO::PARAM_STR);
 $query->bindParam(':bookid',$bookid,PDO::PARAM_STR);
 $query->bindParam(':image',$upload_image);
 $query->execute();
-$_SESSION['msg']="Book info updated successfully";
+$_SESSION['msg']="Info buku berhasil diperbarui";
 header('location:manage-books.php');
 
 
@@ -44,7 +44,7 @@ header('location:manage-books.php');
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Online Library Management System | Edit Book</title>
+    <title>Perpustakaan Online</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->

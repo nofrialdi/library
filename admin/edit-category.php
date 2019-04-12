@@ -19,7 +19,7 @@ $query->bindParam(':category',$category,PDO::PARAM_STR);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->bindParam(':catid',$catid,PDO::PARAM_STR);
 $query->execute();
-$_SESSION['updatemsg']="Brand updated successfully";
+$_SESSION['updatemsg']="Kategori berhasil diperbarui";
 header('location:manage-categories.php');
 
 
@@ -32,7 +32,7 @@ header('location:manage-categories.php');
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Online Library Management System | Edit Categories</title>
+    <title>Perpustakaan Online</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->

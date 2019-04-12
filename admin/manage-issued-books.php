@@ -18,7 +18,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Online Library Management System | Manage Issued Books</title>
+    <title>Perpustakaan Online</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -96,12 +96,12 @@ else{
                                             <th style="text-align: center;">Nama</th>
                                             <th style="text-align: center;">Judul</th>
                                             <th style="text-align: center;">Kode Rak/Buku </th>
-                                            <th style="text-align: center;">Denda Kehilangan (Rp)</th>
+                                            <th style="text-align: center;">Harga Buku (Rp)</th>
                                             <th style="text-align: center;">Tanggal Peminjaman</th>
                                             <th style="text-align: center;">Tanggal Batas Pengembalian</th>
                                             <th style="text-align: center;">Tanggal Pengembalian</th>
                                             
-                                            <th style="text-align: center;">Denda (Rp)</th>
+                                            <th style="text-align: center;">Denda Kerusakan / Kehilangan (Rp)</th>
 
                                             <th style="text-align: center;">Aksi</th>
                                         </tr>
@@ -136,10 +136,11 @@ foreach($results as $result)
 }
                                             ?></td>
                                             
-                                            <td class="center">Rp. <?php echo number_format($result->fine, 0, ".", ".");?></td>
+                                            <td class="center"><?php echo htmlentities($result->fine);?></td>
                                             <td class="center">
 
                                             <a href="update-issue-bookdeails.php?rid=<?php echo htmlentities($result->rid);?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button> 
+                                                <a href="detail-issue-bookdeails.php?rid=<?php echo htmlentities($result->rid);?>"><button class="btn btn-Danger"><i class="fa fa-eye"></i> Detail</button> 
                                          
                                             </td>
                                         </tr>

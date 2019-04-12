@@ -9,7 +9,7 @@ if(isset($_POST['login']))
 {
  //code for captach verification
 if ($_POST["vercode"] != $_SESSION["vercode"] OR $_SESSION["vercode"]=='')  {
-        echo "<script>alert('Incorrect verification code');</script>" ;
+        echo "<script>alert('Kode verifikasi salah');</script>" ;
     } 
         else {
 
@@ -26,7 +26,7 @@ if($query->rowCount() > 0)
 $_SESSION['alogin']=$_POST['username'];
 echo "<script type='text/javascript'> document.location ='admin/dashboard.php'; </script>";
 } else{
-echo "<script>alert('Invalid Details');</script>";
+echo "<script>alert('Detail tidak valid');</script>";
 }
 }
 }

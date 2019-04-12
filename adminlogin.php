@@ -9,7 +9,7 @@ if(isset($_POST['login']))
 {
  //code for captach verification
 if ($_POST["vercode"] != $_SESSION["vercode"] OR $_SESSION["vercode"]=='')  {
-        echo "<script>alert('Incorrect verification code');</script>" ;
+        echo "<script>alert('Kode verifikasi salah');</script>" ;
     } 
         else {
 
@@ -26,7 +26,7 @@ if($query->rowCount() > 0)
 $_SESSION['alogin']=$_POST['username'];
 echo "<script type='text/javascript'> document.location ='admin/dashboard.php'; </script>";
 } else{
-echo "<script>alert('Invalid Details');</script>";
+echo "<script>alert('Detail tidak valid');</script>";
 }
 }
 }
@@ -38,7 +38,7 @@ echo "<script>alert('Invalid Details');</script>";
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Online Library Management System</title>
+    <title>Perpustakaan Online</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->

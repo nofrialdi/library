@@ -10,24 +10,23 @@ else{
 
 if(isset($_POST['return']))
 {
-$rid=intval($_GET['rid']);
-$fine=$_POST['fine'];
+/*$rid=intval($_GET['rid']);
+$fine=$_POST['fine'];*/
 $rstatus=1;
-$sql="update tblissuedbookdetails set fine=:fine,RetrunStatus=:rstatus where id=:rid";
+$sql="select * tblissuedbookdetails where id=:rid";
 $query = $dbh->prepare($sql);
-$query->bindParam(':rid',$rid,PDO::PARAM_STR);
-$query->bindParam(':fine',$fine,PDO::PARAM_STR);
-$query->bindParam(':rstatus',$rstatus,PDO::PARAM_STR);
+/*$query->bindParam(':rid',$rid,PDO::PARAM_STR);*/
+/*$query->bindParam(':fine',$fine,PDO::PARAM_STR);*/
+// $query->bindParam(':rstatus',$rstatus,PDO::PARAM_STR);
 $query->execute();
 
-$_SESSION['msg']="Buku berhasil dikembalikan";
+$_SESSION['msg']="";
 header('location:manage-issued-books.php');
 
 
 
 }
 ?>
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -169,13 +168,14 @@ foreach($results as $result)
 
 <div class="form-group">
 <label>Kondisi Buku :</label>
-<select class="form-control" name="fine">
-<option value="Baik"><?php echo htmlentities($result->fine);?></option>
+<?php echo htmlentities($result->fine);?>
+<!-- <select class="form-control" name="fine">
+
     <option value="Baik">Baik</option>
     <option value="Rusak">Rusak</option>
     <option value="Hilang">Hilang</option>
     
-</select>
+</select> -->
 
 </div>
 
@@ -191,9 +191,9 @@ echo htmlentities($result->fine);
 }
 ?>
 </div> -->
- <?php if($result->RetrunStatus==0){?> 
+ <?php if($result->RetrunStatus==1){?> 
 
-<button type="submit" name="return" id="submit" class="btn btn-info">Perbarui </button>
+<button type="submit" name="return" id="submit" class="btn btn-info">Kembali </button>
 
 
  </div>

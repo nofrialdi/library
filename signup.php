@@ -43,11 +43,11 @@ $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
-echo '<script>alert("Your Registration successfull and your student id is  "+"'.$StudentId.'")</script>';
+echo '<script>alert("Registrasi Anda berhasil dan ID Anggota Anda  "+"'.$StudentId.'")</script>';
 }
 else 
 {
-echo "<script>alert('Something went wrong. Please try again');</script>";
+echo "<script>alert('Ada yang salah. Silakan coba lagi');</script>";
 }
 }
 }
@@ -76,7 +76,7 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
         {
         if(document.signup.password.value!= document.signup.confirmpassword.value)
         {
-        alert("Password and Confirm Password Field do not match  !!");
+        alert("Kata Sandi dan Konfirmasi Kata Sandi tidak cocok !!");
         document.signup.confirmpassword.focus();
         return false;
         }
@@ -203,9 +203,13 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
 		</div> -->
 		
 		<!-- copyright -->
-		<div class="copyright">
+<br>
+        <div class="copy">
+                   <p style="color: #fff" align="center">&copy;2019 Perpustakaan Online |<a style="color: #fff" href="" target="_blank"  > Designed by : Mabes TNI</a></p> 
+                </div>
+		<!-- <div class="copyright">
 			<p>© 2019 Slide Login Form . All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a></p>
-		</div>
+		</div> -->
 		<!-- //copyright --> 
 	</div>
 </div>	

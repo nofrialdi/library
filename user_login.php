@@ -9,7 +9,7 @@ if(isset($_POST['login']))
 {
   //code for captach verification
 if ($_POST["vercode"] != $_SESSION["vercode"] OR $_SESSION["vercode"]=='')  {
-        echo "<script>alert('Incorrect verification code');</script>" ;
+        echo "<script>alert('Kode Verifikasi salah');</script>" ;
     } 
         else {
 $email=$_POST['emailid'];
@@ -30,7 +30,7 @@ if($result->Status==1)
 $_SESSION['login']=$_POST['emailid'];
 echo "<script type='text/javascript'> document.location ='dashboard.php'; </script>";
 } else {
-echo "<script>alert('Your Account Has been blocked .Please contact admin');</script>";
+echo "<script>alert('Akun anda telah diblokir, segera hubungi Admin');</script>";
 
 }
 }
@@ -38,7 +38,7 @@ echo "<script>alert('Your Account Has been blocked .Please contact admin');</scr
 } 
 
 else{
-echo "<script>alert('Invalid Details');</script>";
+echo "<script>alert('Detail tidak valid');</script>";
 }
 }
 }

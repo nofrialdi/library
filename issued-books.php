@@ -28,7 +28,7 @@ header('location:manage-books.php');
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Online Library Management System | Manage Issued Books</title>
+    <title>Perpustakaan Online</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -68,7 +68,7 @@ header('location:manage-books.php');
                                             <th style="text-align: center;">No</th>
                                             <th style="text-align: center;">Judul Buku</th>
                                             <th style="text-align: center;">Kode Rak/Buku </th>
-                                            <th style="text-align: center;">Denda Kehilangan (Rp)</th>
+                                            <th style="text-align: center;">Denda Kehilangan/Kerusakan (Rp)</th>
                                             <th style="text-align: center;">Tanggal Peminjaman</th>
                                             <th style="text-align: center;">Tanggal Batas Pengembalian</th>
                                             <th style="text-align: center;">Tanggal Pengembalian</th>                                      
