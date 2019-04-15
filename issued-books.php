@@ -72,7 +72,7 @@ header('location:manage-books.php');
                                             <th style="text-align: center;">Tanggal Peminjaman</th>
                                             <th style="text-align: center;">Tanggal Batas Pengembalian</th>
                                             <th style="text-align: center;">Tanggal Pengembalian</th>                                      
-                                            <th style="text-align: center;">Denda Kehilangan/Kerusakan (Rp)</th>
+                                            <th style="text-align: center;">Kondisi Buku</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -105,7 +105,7 @@ foreach($results as $result)
                                         }
                                             ?></td>
                                             
-                                              <td class="center">Rp. <?php echo number_format($result->fine, 0, ".", ".");?></td>
+                                              <td class="center"><?php echo htmlentities($result->fine);?></td>
 
                                          
                                         </tr>

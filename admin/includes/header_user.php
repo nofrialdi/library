@@ -32,7 +32,7 @@
                     <div class="navbar-collapse collapse ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
                             <li><a href="dashboard.php" class="menu-top-active">DASHBOARD</a></li>
-                             <li><a href="data_buku.php" class="dropdown-toggle">Data Buku</a></li>
+                             <li><a href="admin/data_buku.php" class="dropdown-toggle">Data Buku</a></li>
                            
                           
    <li>

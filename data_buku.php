@@ -2,12 +2,22 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
-if(strlen($_SESSION['alogin'])==0)
+if(strlen($_SESSION['login'])==0)
     {   
 header('location:index.php');
 }
 else{ 
+if(isset($_GET['del']))
+{
+$id=$_GET['del'];
+$sql = "delete from tblbooks  WHERE id=:id";
+$query = $dbh->prepare($sql);
+$query -> bindParam(':id',$id, PDO::PARAM_STR);
+$query -> execute();
+$_SESSION['delmsg']="Category deleted scuccessfully ";
+header('location:data_buku.php');
 
+}
 
 
     ?>
@@ -39,7 +49,7 @@ else{
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Kelola Peminjaman Buku</h4>
+                <h4 class="header-line">Kelola Data Buku</h4>
     </div>
      <div class="row">
     <?php if($_SESSION['error']!="")
@@ -62,7 +72,16 @@ else{
 </div>
 </div>
 <?php } ?>
-
+<?php if($_SESSION['updatemsg']!="")
+{?>
+<div class="col-md-6">
+<div class="alert alert-success" >
+ <strong>Success :</strong> 
+ <?php echo htmlentities($_SESSION['updatemsg']);?>
+<?php echo htmlentities($_SESSION['updatemsg']="");?>
+</div>
+</div>
+<?php } ?>
 
 
    <?php if($_SESSION['delmsg']!="")
@@ -85,29 +104,25 @@ else{
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                          Peminjaman Buku
+                           List Buku
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <table style="width:100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
                                             <th style="text-align: center;">No</th>
-                                            <th style="text-align: center;">Nama</th>
-                                            <th style="text-align: center;">Judul</th>
-                                            <th style="text-align: center;">Kode Rak/Buku </th>
+                                            <th style="text-align: center;">Judul Buku</th>
+                                            <th style="text-align: center;">Kategori</th>
+                                            <th style="text-align: center;">Pengarang</th>
+                                            <th style="text-align: center;">Kode Rak/Buku</th>
+                                            <th style="text-align: center;">Gambar Buku</th>
                                             <th style="text-align: center;">Harga Buku (Rp)</th>
-                                            <th style="text-align: center;">Tanggal Peminjaman</th>
-                                            <th style="text-align: center;">Tanggal Batas Pengembalian</th>
-                                            <th style="text-align: center;">Tanggal Pengembalian</th>
-                                            
-                                            <th style="text-align: center;">Kondisi Buku</th>
-
-                                            <th style="text-align: center;">Aksi</th>
+                                            <!-- <th style="text-align: center;">Aksi</th> -->
                                         </tr>
                                     </thead>
                                     <tbody>
-<?php $sql = "SELECT tblstudents.FullName,tblbooks.BookName,tblbooks.BookPrice,tblbooks.ISBNNumber,tblissuedbookdetails.IssuesDate,tblissuedbookdetails.ReturnDate,tblissuedbookdetails.Batas,tblissuedbookdetails.fine,tblissuedbookdetails.id as rid from  tblissuedbookdetails join tblstudents on tblstudents.StudentId=tblissuedbookdetails.StudentId join tblbooks on tblbooks.id=tblissuedbookdetails.BookId order by tblissuedbookdetails.id desc";
+<?php $sql = "SELECT tblbooks.BookName,tblbooks.Gambar,tblcategory.CategoryName,tblauthors.AuthorName,tblbooks.ISBNNumber,tblbooks.BookPrice,tblbooks.id as bookid from  tblbooks join tblcategory on tblcategory.id=tblbooks.CatId join tblauthors on tblauthors.id=tblbooks.AuthorId";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -118,31 +133,18 @@ foreach($results as $result)
 {               ?>                                      
                                         <tr class="odd gradeX">
                                             <td class="center"><?php echo htmlentities($cnt);?></td>
-                                            <td class="center"><?php echo htmlentities($result->FullName);?></td>
                                             <td class="center"><?php echo htmlentities($result->BookName);?></td>
-                                            <td class="center"><?php echo htmlentities($result->ISBNNumber);?></td>
+                                            <td class="center"><?php echo htmlentities($result->CategoryName);?></td>
+                                            <td class="center"><?php echo htmlentities($result->AuthorName);?></td>
+                                            <td class="center" ><?php echo htmlentities($result->ISBNNumber);?></td>
+                                            <td class="center" width="200px" height="200px" ><img  src="<?php echo($result->Gambar); ?>"/></td>
+                                          
                                             <td class="center">Rp. <?php echo number_format($result->BookPrice, 0, ".", ".");?></td>
-                                            <td class="center"><?php echo htmlentities($result->IssuesDate);?></td>
-                                            <td class="center"><?php echo htmlentities($result->Batas);?></td>
-                                            
-                                            <td class="center"><?php if($result->ReturnDate=="")
-                                            {
-                                                 echo "<span style='color:red'>";
-                                                echo htmlentities("Belum Dikembalikan");
-                                            } else {
+                                            <!-- <td class="center">
 
-
-                                            echo htmlentities($result->ReturnDate);
-}
-                                            ?></td>
-                                            
-                                            <td class="center"><?php echo htmlentities($result->fine);?></td>
-                                            <td class="center">
-
-                                            <a href="update-issue-bookdeails.php?rid=<?php echo htmlentities($result->rid);?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button> 
-                                                <a href="detail-issue-bookdeails.php?rid=<?php echo htmlentities($result->rid);?>"><button class="btn btn-Danger"><i class="fa fa-eye"></i> Detail</button> 
-                                         
-                                            </td>
+                                            <a href="edit-book.php?bookid=<?php echo htmlentities($result->bookid);?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button> 
+                                          <a href="manage-books.php?del=<?php echo htmlentities($result->bookid);?>" onclick="return confirm('Are you sure you want to delete?');"" >  <button class="btn btn-danger"><i class="fa fa-pencil"></i> Hapus</button>
+                                            </td> -->
                                         </tr>
  <?php $cnt=$cnt+1;}} ?>                                      
                                     </tbody>
