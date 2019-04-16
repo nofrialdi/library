@@ -94,7 +94,7 @@ error:function (){}
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Detail Peminjaman</h4>
+                <h4 class="header-line">Edit Peminjaman</h4>
                 
                             </div>
 
@@ -103,7 +103,7 @@ error:function (){}
 <div class="col-md-10 col-sm-6 col-xs-12 col-md-offset-1"">
 <div class="panel panel-info">
 <div class="panel-heading">
-Detail Peminjaman
+Edit Peminjaman
 </div>
 <div class="panel-body">
 <form role="form" method="post">

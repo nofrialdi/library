@@ -120,8 +120,8 @@ $regstds=$query3->rowCount();
                       <div class="alert alert-success back-widget-set text-center">
                             <i class="fa fa-user fa-5x"></i>
 <?php 
-$sq4 ="SELECT id from tblauthors ";
-$query4 = $dbh -> prepare($sql);
+$sql4 ="SELECT id from tblauthors ";
+$query4 = $dbh -> prepare($sql4);
 $query4->execute();
 $results4=$query4->fetchAll(PDO::FETCH_OBJ);
 $listdathrs=$query4->rowCount();
